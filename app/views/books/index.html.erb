@@ -1,0 +1,39 @@
+ 
+<%= render partial: 'users/info', locals: { user: @user } %>
+
+<%= render partial: 'form', locals: { book: @new_book } %>
+
+ 
+ <div class="mb-2">
+     <h2>Books</h2>
+ </div>
+    
+   <div>
+     <table>
+         <thead>
+             <tr>
+                 <th></th>
+                 <th>Title</th>
+                 <th>Opinion</th>
+             </tr>
+         </thead>
+         <% @books.each do |book| %>
+          <tbody>
+              <tr>
+                   <td>
+                    <%= link_to book_path(book.id) do %>
+                    <%= image_tag book.user.get_profile_image(80,80) %>
+                    <% end %>
+                   </td>
+                  <td>
+                    <%= link_to book_path(book.id) do %>
+                     <%= book.title %>
+                    <% end %>
+                  </td>
+                  <td><%= book.body %></td>
+              </tr>
+          </tbody>
+         <% end %>
+     </table>
+   </div>
+ 

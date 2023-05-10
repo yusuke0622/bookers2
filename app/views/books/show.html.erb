@@ -1,0 +1,26 @@
+
+<%= render partial: 'users/info', locals: { user: @user } %>
+
+
+<%= render partial: 'form', locals: { book: @new_book } %>
+ 
+ 
+ 
+ <div class="mb-2">
+     <h2>Book detail</h2>
+ </div>
+ 
+<div>
+    <%= link_to user_path(@user.id) do %>
+        <%= image_tag @book.user.get_profile_image(80,80) %> 
+        <%= @book.user.name %>
+    <% end %>
+    <%= link_to book_path(@book.id) do %>
+        <%= @book.title %>
+    <% end %>
+    <%= @book.body %>
+    <% if @book.user == current_user %>
+    <%= link_to 'Edit', edit_book_path %>
+    <%= link_to 'Destroy', book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+    <% end %>
+</div>
