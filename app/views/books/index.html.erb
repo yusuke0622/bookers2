@@ -16,7 +16,7 @@
   <div class="col-md-3">
     <%= render partial: 'users/info', locals: { user: @user } %>
     
-    <%= render partial: 'form', locals: { book: @new_book } %>
+    <%= render partial: 'form', locals: { book: @book } %>
   </div><!--left-content--->
  
  <div class="col-md-8 offset-md-1">
@@ -36,7 +36,7 @@
      <tbody>
        <tr>
         <td>
-         <%= link_to book_path(book.id) do %>
+         <%= link_to user_path(book.user.id) do %>
          <%= image_tag book.user.get_profile_image(80,80) %>
          <% end %>
         </td>

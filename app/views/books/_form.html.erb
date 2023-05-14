@@ -6,11 +6,11 @@
      <div class="form-group">
          <%= form_with model: book, method: :post  do |f| %>
               <div>
-                  <%= f.label :Title %>
+                  <%= f.label :title %>
                   <%= f.text_field :title, class: 'form-control' %>
               </div>
               <div class="my-3">
-                  <%= f.label :Opinion %>
+                  <%= f.label :opinion %>
                   <%= f.text_area :body, class: 'form-control' %>
               </div>
               <div>
