@@ -9,7 +9,7 @@
      <% if @user.errors.any? %>
       <%= @user.errors.count %>error prohibites this obj from being saved:
        <ul>
-        <%= @user.errors.full_messages.each do |message| %>
+        <h3><%= @user.errors.full_messages.each do |message| %></h3>
         <li><%= message %></li>
         <% end %>
        </ul>
